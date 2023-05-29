@@ -1,14 +1,14 @@
-public class myThread extends Thread {
+public class MyThread extends Thread {
+    Student student;
+
+    public MyThread(Student student) {
+        this.student = student;
+    }
+
     @Override
     public void run() {
-        for (int i = 0; i < 100; i++) {
-            System.out.println("Hello myThread");
-            try {
-                Thread.sleep(5000);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            
+        for (int i = 0; i < 10000; i++) {
+            student.incrementAge();
         }
     }
 }
